@@ -320,13 +320,13 @@ namespace GenericSortedList.Logic
                 prev = run;
                 run = run.Next;
             }
-            if (run != null)
+            if (run != null)        // Item found
             {
-                if (prev == null)
+                if (prev == null)   // Remove the head
                 {
                     _head = run.Next;
                 }
-                else
+                else                // Remove in the middle or at the end
                 {
                     prev.Next = run.Next;
                 }
