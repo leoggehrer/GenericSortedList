@@ -276,11 +276,11 @@ namespace GenericSortedList.Logic
                 throw new ArgumentNullException();
             }
 
-            if (_head == null)
+            if (_head == null)      // Insert at the head
             {
                 _head = new Node(item, _head);
             }
-            else
+            else                    // Insert in the middle or at the end
             {
                 Node? run = _head;
                 Node? prev = null;
@@ -290,11 +290,11 @@ namespace GenericSortedList.Logic
                     prev = run;
                     run = run.Next;
                 }
-                if (prev == null)
+                if (prev == null)   // Insert at the head
                 {
                     _head = new Node(item, _head);
                 }
-                else
+                else                // Insert in the middle or at the end
                 {
                     prev.Next = new Node(item, run);
                 }
